@@ -25,7 +25,7 @@ export default function AdvancedConceptsPage() {
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur">
         <div className="container flex h-16 items-center justify-between py-4">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center pl-4 gap-2">
             <Database className="h-6 w-6" />
             <h1 className="text-xl font-bold">Cache Academy</h1>
           </div>
