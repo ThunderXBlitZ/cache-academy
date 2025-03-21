@@ -6,7 +6,11 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 
+const isProd = process.env.NODE_ENV === "production";
+
 module.exports = {
   output: 'export',
-  distDir: 'build'
+  distDir: 'build',
+  basePath: isProd ? "/cache-academy" : "",
+  assetPrefix: isProd ? "/cache-academy/" : "",
 }
