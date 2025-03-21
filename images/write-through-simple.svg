@@ -1,0 +1,86 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8fafc" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#0f172a">Write-Through Cache</text>
+  <text x="400" y="70" font-family="Arial" font-size="16" text-anchor="middle" fill="#64748b">Writing data to both cache and database at the same time</text>
+  
+  <!-- Step 1: Write Request -->
+  <g transform="translate(100, 120)">
+    <rect x="0" y="0" width="150" height="60" rx="5" ry="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="75" y="35" font-family="Arial" font-size="14" text-anchor="middle" fill="#1e40af">Application</text>
+    
+    <text x="75" y="-15" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Step 1: Write Request</text>
+    <text x="75" y="85" font-family="Arial" font-size="12" text-anchor="middle" fill="#64748b">App needs to save new data</text>
+    
+    <text x="180" y="35" font-family="Arial" font-size="24" text-anchor="middle" fill="#0f172a">→</text>
+  </g>
+  
+  <!-- Step 2: Simultaneous Write -->
+  <g transform="translate(350, 120)">
+    <rect x="0" y="0" width="150" height="60" rx="5" ry="5" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
+    <text x="75" y="35" font-family="Arial" font-size="14" text-anchor="middle" fill="#0c4a6e">Cache</text>
+    
+    <rect x="0" y="100" width="150" height="60" rx="5" ry="5" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="75" y="135" font-family="Arial" font-size="14" text-anchor="middle" fill="#5b21b6">Database</text>
+    
+    <!-- Arrows from application to both -->
+    <path d="M -100 30 L -20 30" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M -100 30 C -70 30, -70 130, -20 130" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <text x="75" y="-15" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Step 2: Simultaneous Write</text>
+    <text x="75" y="180" font-family="Arial" font-size="12" text-anchor="middle" fill="#64748b">Data is written to both places at once</text>
+    
+    <text x="180" y="80" font-family="Arial" font-size="24" text-anchor="middle" fill="#0f172a">→</text>
+  </g>
+  
+  <!-- Step 3: Write Complete -->
+  <g transform="translate(600, 120)">
+    <rect x="0" y="0" width="150" height="60" rx="5" ry="5" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
+    <text x="75" y="35" font-family="Arial" font-size="14" text-anchor="middle" fill="#0c4a6e">Cache</text>
+    <text x="75" y="55" font-family="Arial" font-size="12" text-anchor="middle" fill="#16a34a">✓ Updated</text>
+    
+    <rect x="0" y="100" width="150" height="60" rx="5" ry="5" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="75" y="135" font-family="Arial" font-size="14" text-anchor="middle" fill="#5b21b6">Database</text>
+    <text x="75" y="155" font-family="Arial" font-size="12" text-anchor="middle" fill="#16a34a">✓ Updated</text>
+    
+    <!-- Consistency indicator -->
+    <line x1="75" y1="60" x2="75" y2="100" stroke="#16a34a" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="120" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#16a34a">Always in sync</text>
+    
+    <text x="75" y="-15" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="#0f172a">Step 3: Write Complete</text>
+    <text x="75" y="180" font-family="Arial" font-size="12" text-anchor="middle" fill="#64748b">Both cache and database have the same data</text>
+  </g>
+  
+  <!-- Pros and Cons -->
+  <g transform="translate(100, 350)">
+    <rect x="0" y="0" width="250" height="120" rx="5" ry="5" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <text x="125" y="25" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#0f172a">Pros</text>
+    <text x="20" y="50" font-family="Arial" font-size="14" fill="#16a34a">✓ Simple to understand</text>
+    <text x="20" y="75" font-family="Arial" font-size="14" fill="#16a34a">✓ Cache and database always match</text>
+    <text x="20" y="100" font-family="Arial" font-size="14" fill="#16a34a">✓ No risk of losing data</text>
+  </g>
+  
+  <g transform="translate(450, 350)">
+    <rect x="0" y="0" width="250" height="120" rx="5" ry="5" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <text x="125" y="25" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#0f172a">Cons</text>
+    <text x="20" y="50" font-family="Arial" font-size="14" fill="#ef4444">✗ Slower writes (have to wait for both)</text>
+    <text x="20" y="75" font-family="Arial" font-size="14" fill="#ef4444">✗ Database gets busy with every write</text>
+    <text x="20" y="100" font-family="Arial" font-size="14" fill="#ef4444">✗ Not ideal for write-heavy applications</text>
+  </g>
+  
+  <!-- When to Use -->
+  <rect x="100" y="480" width="600" height="30" rx="5" ry="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="400" y="500" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="#1e40af">
+    Best for: Applications where data consistency is the top priority
+  </text>
+  
+  <!-- Arrow Marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a"/>
+    </marker>
+  </defs>
+</svg>
+
