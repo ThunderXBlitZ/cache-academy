@@ -72,15 +72,40 @@ export default function CacheMechanicsPage() {
   )
 }
 
+// Define types for the cache mechanics data
+type CacheState = Record<string, string>;
+type Step = {
+  title: string;
+  description: string;
+  cacheState: CacheState;
+  dbState: CacheState;
+  appState: string;
+  highlight?: "app" | "cache" | "db" | "both";
+};
+
+type CacheMechanic = {
+  title: string;
+  description: string;
+  steps: Step[];
+  pros: string[];
+  cons: string[];
+  pseudoCode: string;
+  bestFor: string;
+};
+
+type CacheMechanics = {
+  [key: string]: CacheMechanic;
+};
+
 function CacheMechanicsDemo() {
-  const [activeTab, setActiveTab] = useState("write-through")
-  const [currentStep, setCurrentStep] = useState(0)
+  const [activeTab, setActiveTab] = useState<string>("write-through")
+  const [currentStep, setCurrentStep] = useState<number>(0)
 
   // Add state to track collapsible sections
-  const [codeVisible, setCodeVisible] = useState(false)
+  const [codeVisible, setCodeVisible] = useState<boolean>(false)
   const toggleCode = () => setCodeVisible(!codeVisible)
 
-  const cacheMechanics = {
+  const cacheMechanics: CacheMechanics = {
     "write-through": {
       title: "Write-Through Cache",
       description: "Write data to both the cache and database at the same time.",
@@ -403,7 +428,7 @@ function writeData(key, value) {
       bestFor: "Applications that need simple caching with minimal code complexity",
     },
   }
-
+  
   const currentMechanic = cacheMechanics[activeTab]
   const currentStepData = currentMechanic.steps[currentStep]
 
@@ -419,7 +444,7 @@ function writeData(key, value) {
     }
   }
 
-  const handleTabChange = (value) => {
+  const handleTabChange = (value: string) => {
     setActiveTab(value)
     setCurrentStep(0)
   }
@@ -588,4 +613,3 @@ function writeData(key, value) {
     </div>
   )
 }
-

@@ -102,20 +102,32 @@ export default function AdvancedConceptsPage() {
   )
 }
 
+// Define types for the advanced concepts content
+type AdvancedConceptContent = {
+  title: string;
+  description: string;
+  content: React.ReactNode;
+};
+
+type AdvancedConcepts = {
+  [key: string]: AdvancedConceptContent;
+};
+
 function AdvancedCachingConcepts() {
-  const [activeTab, setActiveTab] = useState("concurrency")
+  const [activeTab, setActiveTab] = useState<string>("concurrency")
 
   // States to manage code visibility
-  const [pessimisticCodeVisible, setPessimisticCodeVisible] = useState(false)
-  const [optimisticCodeVisible, setOptimisticCodeVisible] = useState(false)
-  const [cacheLockCodeVisible, setCacheLockCodeVisible] = useState(false)
-  const [staleCacheCodeVisible, setStaleCacheCodeVisible] = useState(false)
-  const [lruCodeVisible, setLruCodeVisible] = useState(false)
-  const [lfuCodeVisible, setLfuCodeVisible] = useState(false)
-  const [fifoCodeVisible, setFifoCodeVisible] = useState(false)
-  const [randomCodeVisible, setRandomCodeVisible] = useState(false)
+  const [pessimisticCodeVisible, setPessimisticCodeVisible] = useState<boolean>(false)
+  const [optimisticCodeVisible, setOptimisticCodeVisible] = useState<boolean>(false)
+  const [cacheLockCodeVisible, setCacheLockCodeVisible] = useState<boolean>(false)
+  const [staleCacheCodeVisible, setStaleCacheCodeVisible] = useState<boolean>(false)
+  const [lruCodeVisible, setLruCodeVisible] = useState<boolean>(false)
+  const [lfuCodeVisible, setLfuCodeVisible] = useState<boolean>(false)
+  const [fifoCodeVisible, setFifoCodeVisible] = useState<boolean>(false)
+  const [randomCodeVisible, setRandomCodeVisible] = useState<boolean>(false)
 
-  const advancedConcepts = {
+  
+  const advancedConcepts: AdvancedConcepts = {
     concurrency: {
       title: "Cache Concurrency Control",
       description: "Managing multiple users accessing the same cached data at the same time.",
@@ -317,7 +329,7 @@ function updateData(key, updateFn) {
     throw "Data was modified by another user";
     // Application can retry or resolve conflict
   }
-  
+    
   return newValue;
 }`}</code>
                       </pre>
@@ -994,4 +1006,3 @@ class RandomCache {
     </div>
   )
 }
-
