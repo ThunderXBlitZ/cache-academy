@@ -20,13 +20,13 @@ export default function HomePage() {
               Home
             </Link>
             <Link href="/cache-mechanics" className="font-medium text-muted-foreground hover:text-primary">
-              Cache Mechanics
+              Cache mechanics
             </Link>
             <Link href="/comparison" className="font-medium text-muted-foreground hover:text-primary">
               Comparison
             </Link>
             <Link href="/advanced-concepts" className="font-medium text-muted-foreground hover:text-primary">
-              Advanced Concepts
+              Advanced concepts
             </Link>
           </nav>
         </div>
@@ -59,7 +59,7 @@ export default function HomePage() {
                     </div>
                     <div className="md:w-1/2">
                       <Image
-                        src="/images/caching-simplified.svg"
+                        src="./images/caching-simplified.svg"
                         alt="How Caching Works"
                         width={500}
                         height={300}
