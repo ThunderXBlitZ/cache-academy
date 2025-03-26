@@ -20,13 +20,13 @@ export default function HomePage() {
               Home
             </Link>
             <Link href="/cache-mechanics" className="font-medium text-muted-foreground hover:text-primary">
-              Cache mechanics
+              Cache Mechanics
             </Link>
             <Link href="/comparison" className="font-medium text-muted-foreground hover:text-primary">
               Comparison
             </Link>
             <Link href="/advanced-concepts" className="font-medium text-muted-foreground hover:text-primary">
-              Advanced concepts
+              Advanced Concepts
             </Link>
           </nav>
         </div>
