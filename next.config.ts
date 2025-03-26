@@ -1,16 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',
+  distDir: 'build',
+  basePath: process.env.NODE_ENV === 'production' ? '/cache-academy' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/cache-academy/' : '',
+  trailingSlash: true,
+  images: {
+    unoptimized: true, // Required for static export
+  },
 };
 
 export default nextConfig;
-
-const isProd = process.env.NODE_ENV === "production";
-
-module.exports = {
-  output: 'export',
-  distDir: 'build',
-  basePath: isProd ? "/cache-academy" : "",
-  assetPrefix: isProd ? "/cache-academy/" : "",
-}

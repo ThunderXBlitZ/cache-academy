@@ -2,7 +2,7 @@
   "name": "cache-academy",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/ThunderXBlitZ/cache-academy",
+  "homepage": "https://thunderxblitz.github.io/cache-academy",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
