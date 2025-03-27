@@ -46,12 +46,18 @@ export default function AdvancedConceptsPage() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="container py-8">
+      <section className="py-8 md:py-12">
+          <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4">
+            <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl">
+              Advanced Caching Concepts
+            </h1>
+            <p className="text-lg text-muted-foreground md:text-xl">
+            Building on the basics to create more robust caching systems
+            </p>
+          </div>
+        </section>
+        <section className="max-w-[980px] mx-auto py-8">
           <Card className="mb-8">
-            <CardHeader>
-              <CardTitle>Advanced Caching Concepts</CardTitle>
-              <CardDescription>Building on the basics to create more robust caching systems</CardDescription>
-            </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="rounded-lg border p-4 flex flex-col items-center text-center">
@@ -73,7 +79,7 @@ export default function AdvancedConceptsPage() {
             </CardContent>
           </Card>
         </section>
-        <section className="container py-8">
+        <section className="max-w-[980px] mx-auto py-8">
           <AdvancedCachingConcepts />
         </section>
       </main>

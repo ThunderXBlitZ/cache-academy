@@ -33,8 +33,8 @@ export default function CacheMechanicsPage() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="container py-8 md:py-12">
-          <div className="mx-auto flex max-w-[980px] flex-col items-start gap-4">
+        <section className="py-8 md:py-12">
+          <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4">
             <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl">
               Four Ways to Manage Your Cache
             </h1>
@@ -43,7 +43,7 @@ export default function CacheMechanicsPage() {
             </p>
           </div>
         </section>
-        <section className="container py-8">
+        <section className="py-8">
           <CacheMechanicsDemo />
         </section>
       </main>

@@ -32,7 +32,7 @@ export default function HomePage() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="container py-12 md:py-16">
+        <section className="py-12 md:py-16">
           <div className="mx-auto max-w-[980px]">
             <div className="text-center mb-12">
               <h1 className="text-4xl font-bold tracking-tight md:text-5xl mb-4">Welcome to Cache Academy</h1>

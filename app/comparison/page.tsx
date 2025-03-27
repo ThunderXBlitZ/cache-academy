@@ -32,8 +32,8 @@ export default function ComparisonPage() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="container py-8 md:py-12">
-          <div className="mx-auto flex max-w-[980px] flex-col items-start gap-4">
+        <section className="py-8 md:py-12">
+          <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4">
             <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl">
               Comparing Caching Strategies
             </h1>
@@ -42,8 +42,8 @@ export default function ComparisonPage() {
             </p>
           </div>
         </section>
-        <section className="container py-8">
-          <div className="mx-auto max-w-[1200px]">
+        <section className="py-8 mx-auto max-w-[980px] flex flex-row items-center">
+          <div className="mx-auto w-full">
             <Tabs defaultValue="overview" className="w-full">
               <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="overview">Overview</TabsTrigger>
