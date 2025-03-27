@@ -56,29 +56,6 @@ export default function AdvancedConceptsPage() {
             </p>
           </div>
         </section>
-        <section className="max-w-[980px] mx-auto mt-8">
-          <Card>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="rounded-lg border p-4 flex flex-col items-center text-center">
-                  <Lock className="h-12 w-12 text-primary mb-2" />
-                  <h3 className="font-medium mb-2">Concurrency Control</h3>
-                  <p className="text-sm text-muted-foreground">Managing multiple users updating the same cached data</p>
-                </div>
-                <div className="rounded-lg border p-4 flex flex-col items-center text-center">
-                  <Zap className="h-12 w-12 text-primary mb-2" />
-                  <h3 className="font-medium mb-2">Thundering Herd</h3>
-                  <p className="text-sm text-muted-foreground">Handling traffic spikes when cache entries expire</p>
-                </div>
-                <div className="rounded-lg border p-4 flex flex-col items-center text-center">
-                  <Trash className="h-12 w-12 text-primary mb-2" />
-                  <h3 className="font-medium mb-2">Eviction Policies</h3>
-                  <p className="text-sm text-muted-foreground">Deciding what to remove when your cache gets full</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
         <section className="max-w-[980px] mx-auto py-8">
           <AdvancedCachingConcepts />
         </section>
@@ -979,6 +956,32 @@ class RandomCache {
 
   return (
     <div className="mx-auto max-w-5xl">
+      <section className="max-w-[980px] mx-auto">
+          <Card>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="rounded-lg border p-4 flex flex-col items-center text-center"
+                onClick={() => setActiveTab("concurrency")}>
+                  <Lock className="h-12 w-12 text-primary mb-2" />
+                  <h3 className="font-medium mb-2">Concurrency Control</h3>
+                  <p className="text-sm text-muted-foreground">Managing multiple users updating the same cached data</p>
+                </div>
+                <div className="rounded-lg border p-4 flex flex-col items-center text-center"
+                onClick={() => setActiveTab("thundering")}>
+                  <Zap className="h-12 w-12 text-primary mb-2" />
+                  <h3 className="font-medium mb-2">Thundering Herd</h3>
+                  <p className="text-sm text-muted-foreground">Handling traffic spikes when cache entries expire</p>
+                </div>
+                <div className="rounded-lg border p-4 flex flex-col items-center text-center"
+                onClick={() => setActiveTab("eviction")}>
+                  <Trash className="h-12 w-12 text-primary mb-2" />
+                  <h3 className="font-medium mb-2">Eviction Policies</h3>
+                  <p className="text-sm text-muted-foreground">Deciding what to remove when your cache gets full</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="concurrency">Concurrency Control</TabsTrigger>
