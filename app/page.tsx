@@ -9,7 +9,7 @@ import { useState } from "react"
 
 export default function HomePage() {
     // Add state to track collapsible sections
-    const [codeVisible, setCodeVisible] = useState<boolean>(true)
+    const [codeVisible, setCodeVisible] = useState<boolean>(false)
     const toggleCode = () => setCodeVisible(!codeVisible)
   
   return (
