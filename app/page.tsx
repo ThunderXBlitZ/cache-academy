@@ -4,9 +4,14 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Database, Server, Layers, BarChart } from "lucide-react"
+import { ArrowRight, Database, Server, Layers, BarChart, ChevronDown} from "lucide-react"
+import { useState } from "react"
 
 export default function HomePage() {
+    // Add state to track collapsible sections
+    const [codeVisible, setCodeVisible] = useState<boolean>(true)
+    const toggleCode = () => setCodeVisible(!codeVisible)
+  
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur">
@@ -203,10 +208,16 @@ export default function HomePage() {
                   </div>
 
                   <div className="mt-12">
-                    <h3 className="text-xl font-medium mb-4">Simple Caching Example</h3>
-                    <div className="rounded-lg bg-muted p-4">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-medium mb-4">Simple Caching Example</h3>
+                      <Button variant="ghost" size="sm" onClick={toggleCode} className="flex items-center gap-1">
+                        {codeVisible ? "Hide Code" : "Show Code"}
+                        <ChevronDown className={`h-4 w-4 transition-transform ${codeVisible ? "rotate-180" : ""}`} />
+                      </Button>
+                    </div>
+                    {codeVisible && (<div className="rounded-lg bg-muted p-4">
                       <pre className="text-sm overflow-auto">
-                        <code>{`// Simple caching example in pseudocode
+                      <code>{`// Simple caching example in pseudocode
 
 function getData(key) {
   // First, check if the data is in the cache
@@ -224,10 +235,10 @@ function getData(key) {
 }`}</code>
                       </pre>
                     </div>
-                  </div>
+  )}</div>
                 </div>
               </CardContent>
-              <CardFooter className="mt-16 flex justify-end">
+              <CardFooter className="mt-4 flex justify-end">
                 <Link href="/cache-mechanics">
                   <Button className="gap-2">
                     Explore Caching Mechanisms <ArrowRight className="h-4 w-4" />
