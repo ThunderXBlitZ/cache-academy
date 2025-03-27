@@ -14,7 +14,7 @@ export default function CacheMechanicsPage() {
         <div className="flex h-16 items-center justify-between py-4">
           <div className="flex items-center pl-4 gap-2">
             <Database className="h-6 w-6" />
-            <h1><a className="text-xl font-bold" href='/'>Cache Academy</a></h1>
+            <h1><a className="text-xl font-bold" href='/cache-academy'>Cache Academy</a></h1>
           </div>
           <nav className="flex items-center pr-4 gap-4">
             <Link href="/" className="font-medium text-muted-foreground hover:text-primary">

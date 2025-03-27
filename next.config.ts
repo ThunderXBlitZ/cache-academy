@@ -3,8 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: 'export',
   distDir: 'build',
-  basePath: process.env.NODE_ENV === 'production' ? '/cache-academy' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/cache-academy/' : '',
+  basePath: '/cache-academy',
+  assetPrefix: '/cache-academy/',
   trailingSlash: true,
   images: {
     unoptimized: true, // Required for static export
