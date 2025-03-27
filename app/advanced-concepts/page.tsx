@@ -56,13 +56,13 @@ export default function AdvancedConceptsPage() {
             </p>
           </div>
         </section>
-        <section className="max-w-[980px] mx-auto py-8">
-          <Card className="mb-8">
+        <section className="max-w-[980px] mx-auto mt-8">
+          <Card>
             <CardContent>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="rounded-lg border p-4 flex flex-col items-center text-center">
                   <Lock className="h-12 w-12 text-primary mb-2" />
-                  <h3 className="font-medium mb-2">Cache Concurrency</h3>
+                  <h3 className="font-medium mb-2">Concurrency Control</h3>
                   <p className="text-sm text-muted-foreground">Managing multiple users updating the same cached data</p>
                 </div>
                 <div className="rounded-lg border p-4 flex flex-col items-center text-center">
@@ -346,7 +346,7 @@ function updateData(key, updateFn) {
             </Card>
           </div>
 
-          <div className="rounded-lg bg-muted p-4">
+          <div className="rounded-lg bg-muted p-4 mt-16">
             <div className="flex items-center gap-2 mb-2">
               <BookOpen className="h-5 w-5 text-primary" />
               <h3 className="text-lg font-medium">Quick Tips</h3>
@@ -574,7 +574,7 @@ function getData(key) {
             </Card>
           </div>
 
-          <div className="rounded-lg bg-muted p-4">
+          <div className="rounded-lg bg-muted p-4 mt-16">
             <div className="flex items-center gap-2 mb-2">
               <BookOpen className="h-5 w-5 text-primary" />
               <h3 className="text-lg font-medium">Real-World Example</h3>
@@ -948,7 +948,7 @@ class RandomCache {
             </Card>
           </div>
 
-          <div className="rounded-lg bg-muted p-4">
+          <div className="rounded-lg bg-muted p-4 mt-16">
             <div className="flex items-center gap-2 mb-2">
               <Shield className="h-5 w-5 text-primary" />
               <h3 className="text-lg font-medium">Which One Should You Choose?</h3>
@@ -997,7 +997,7 @@ class RandomCache {
         </TabsContent>
       </Tabs>
 
-      <div className="mt-8 flex justify-between">
+      <div className="mt-16 flex justify-between">
         <Link href="/comparison">
           <Button variant="outline" className="gap-2">
             <ArrowLeft className="h-4 w-4" /> Back to Comparison

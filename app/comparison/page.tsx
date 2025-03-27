@@ -167,7 +167,7 @@ export default function ComparisonPage() {
                       </table>
                     </div>
 
-                    <div className="mt-8 grid md:grid-cols-2 gap-6">
+                    <div className="mt-16 grid md:grid-cols-2 gap-6">
                       <div>
                         <h3 className="text-lg font-medium mb-4 text-primary">Pros & Cons Summary</h3>
                         <div className="space-y-4">
@@ -551,7 +551,7 @@ export default function ComparisonPage() {
                       </div>
                     </div>
 
-                    <div className="mt-8">
+                    <div className="mt-16">
                       <h3 className="text-lg font-medium mb-4">Common Combinations</h3>
                       <div className="rounded-lg border p-4">
                         <div className="grid md:grid-cols-2 gap-6">
@@ -583,7 +583,7 @@ export default function ComparisonPage() {
               </TabsContent>
             </Tabs>
 
-            <div className="mt-8 flex justify-between">
+            <div className="mt-16 flex justify-between">
               <Link href="/cache-mechanics">
                 <Button variant="outline" className="gap-2">
                   <ArrowLeft className="h-4 w-4" /> Back to Cache Mechanics

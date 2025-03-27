@@ -33,7 +33,7 @@ export default function CacheMechanicsPage() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="py-8 md:py-12">
+        <section className="py-16">
           <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4">
             <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl">
               Four Ways to Manage Your Cache
@@ -559,7 +559,7 @@ function writeData(key, value) {
             </CardFooter>
           </Card>
 
-          <div className="mt-8">
+          <div className="mt-16">
             <Card>
               <CardHeader>
                 <CardTitle>Pros & Cons of {currentMechanic.title}</CardTitle>
@@ -588,7 +588,7 @@ function writeData(key, value) {
                   </div>
                 </div>
 
-                <div className="mt-4 rounded-lg border-2 border-primary/20 bg-primary/5 p-4">
+                <div className="mt-6 rounded-lg border-2 border-primary/20 bg-primary/5 p-4">
                   <h4 className="mb-2 font-medium">Best For</h4>
                   <p>{currentMechanic.bestFor}</p>
                 </div>
@@ -598,7 +598,7 @@ function writeData(key, value) {
         </TabsContent>
       </Tabs>
 
-      <div className="mt-8 flex justify-between">
+      <div className="mt-16 flex justify-between">
         <Link href="/">
           <Button variant="outline" className="gap-2">
             <ArrowLeft className="h-4 w-4" /> Back to Home

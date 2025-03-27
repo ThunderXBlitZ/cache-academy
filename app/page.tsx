@@ -45,8 +45,8 @@ export default function HomePage() {
                 <CardDescription>A beginner's guide to understanding caching in system design</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-6">
-                  <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className="space-y-6 mt-8">
+                  <div className="mb-16 flex flex-col md:flex-row gap-6 items-center">
                     <div className="md:w-1/2">
                       <p className="text-lg mb-4">
                         <strong>Caching</strong> is like having a small notepad where you write down information you use
@@ -68,7 +68,9 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className="rounded-lg bg-muted p-6 my-6">
+                  <hr></hr>
+                  
+                  <div className="rounded-lg bg-muted p-6 mt-16">
                     <h3 className="text-xl font-medium mb-4">Why Do We Need Caching?</h3>
                     <div className="grid md:grid-cols-3 gap-6">
                       <div className="flex flex-col items-center text-center">
@@ -101,7 +103,7 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 mt-12 gap-6">
                     <div className="rounded-lg border p-6">
                       <div className="flex items-center gap-3 mb-3">
                         <Server className="h-6 w-6 text-primary" />
@@ -152,7 +154,7 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className="rounded-lg border-2 border-primary/20 bg-primary/5 p-6">
+                  <div className="rounded-lg border-2 border-primary/20 bg-primary/5 mt-12 p-6">
                     <h3 className="text-xl font-medium mb-4">The Caching Challenge</h3>
                     <p className="mb-4">
                       The key challenge in caching is deciding <strong>when and how</strong> to move data between the
@@ -200,7 +202,7 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className="mt-6">
+                  <div className="mt-12">
                     <h3 className="text-xl font-medium mb-4">Simple Caching Example</h3>
                     <div className="rounded-lg bg-muted p-4">
                       <pre className="text-sm overflow-auto">
@@ -225,7 +227,7 @@ function getData(key) {
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="flex justify-end">
+              <CardFooter className="mt-16 flex justify-end">
                 <Link href="/cache-mechanics">
                   <Button className="gap-2">
                     Explore Caching Mechanisms <ArrowRight className="h-4 w-4" />
