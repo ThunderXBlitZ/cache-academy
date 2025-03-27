@@ -11,12 +11,12 @@ export default function CacheMechanicsPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur">
-        <div className="container flex h-16 items-center justify-between py-4">
+        <div className="flex h-16 items-center justify-between py-4">
           <div className="flex items-center pl-4 gap-2">
             <Database className="h-6 w-6" />
             <h1><a className="text-xl font-bold" href='/'>Cache Academy</a></h1>
           </div>
-          <nav className="flex items-center gap-4">
+          <nav className="flex items-center pr-4 gap-4">
             <Link href="/" className="font-medium text-muted-foreground hover:text-primary">
               Home
             </Link>
