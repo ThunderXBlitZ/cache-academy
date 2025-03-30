@@ -136,7 +136,6 @@ export default function ComparisonPage() {
                             </td>
                             <td className="py-4 px-4">
                               <div className="flex items-center">
-                                <XCircle className="h-5 w-5 text-red-500 mr-2" />
                                 <span>Slow after writes</span>
                               </div>
                             </td>
@@ -436,8 +435,8 @@ export default function ComparisonPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid md:grid-cols-2 gap-6">
-                      <div className="rounded-lg border p-6">
-                        <div className="flex items-center gap-3 mb-4">
+                      <div className="flex flex-col rounded-lg border p-6">
+                        <div className="flex flex-col items-center gap-3 mb-4">
                           <div className="bg-primary/10 p-2 rounded-full">
                             <Server className="h-6 w-6 text-primary" />
                           </div>
@@ -458,14 +457,16 @@ export default function ComparisonPage() {
                             <span>Systems where data loss is unacceptable</span>
                           </li>
                         </ul>
-                        <h4 className="font-medium mb-2">Example:</h4>
-                        <div className="rounded-lg bg-muted p-3 text-sm">
-                          <p>E-commerce platforms where inventory and order data must be accurate across all systems</p>
+                        <div className="mt-auto">
+                          <h4 className="font-medium mb-2">Example:</h4>
+                          <div className="rounded-lg bg-muted p-3 text-sm">
+                            <p>E-commerce platforms where inventory and order data must be accurate across all systems</p>
+                          </div>
                         </div>
                       </div>
 
                       <div className="rounded-lg border p-6">
-                        <div className="flex items-center gap-3 mb-4">
+                        <div className="flex flex-col items-center gap-3 mb-4">
                           <div className="bg-primary/10 p-2 rounded-full">
                             <Server className="h-6 w-6 text-primary" />
                           </div>
@@ -486,14 +487,16 @@ export default function ComparisonPage() {
                             <span>Applications that can tolerate brief periods of data inconsistency</span>
                           </li>
                         </ul>
-                        <h4 className="font-medium mb-2">Example:</h4>
-                        <div className="rounded-lg bg-muted p-3 text-sm">
-                          <p>Analytics systems, logging platforms, and real-time data collection services</p>
+                        <div className="mt-auto">
+                          <h4 className="font-medium mb-2">Example:</h4>
+                          <div className="rounded-lg bg-muted p-3 text-sm">
+                            <p>Analytics systems, logging platforms, and real-time data collection services</p>
+                          </div>
                         </div>
                       </div>
 
                       <div className="rounded-lg border p-6">
-                        <div className="flex items-center gap-3 mb-4">
+                        <div className="flex flex-col items-center gap-3 mb-4">
                           <div className="bg-primary/10 p-2 rounded-full">
                             <Server className="h-6 w-6 text-primary" />
                           </div>
@@ -514,16 +517,18 @@ export default function ComparisonPage() {
                             <span>Applications where preventing cache pollution is important</span>
                           </li>
                         </ul>
-                        <h4 className="font-medium mb-2">Example:</h4>
-                        <div className="rounded-lg bg-muted p-3 text-sm">
-                          <p>
-                            Media storage systems, archival data, and logging systems where old data is rarely accessed
-                          </p>
+                        <div className="mt-auto">
+                          <h4 className="font-medium mb-2">Example:</h4>
+                          <div className="rounded-lg bg-muted p-3 text-sm">
+                            <p>
+                              Media storage systems, archival data, and logging systems where old data is rarely accessed
+                            </p>
+                          </div>
                         </div>
                       </div>
 
-                      <div className="rounded-lg border p-6">
-                        <div className="flex items-center gap-3 mb-4">
+                      <div className="flex flex-col rounded-lg border p-6">
+                        <div className="flex  flex-col items-center gap-3 mb-4">
                           <div className="bg-primary/10 p-2 rounded-full">
                             <Server className="h-6 w-6 text-primary" />
                           </div>
@@ -544,9 +549,11 @@ export default function ComparisonPage() {
                             <span>Applications where automatic cache population is desired</span>
                           </li>
                         </ul>
-                        <h4 className="font-medium mb-2">Example:</h4>
-                        <div className="rounded-lg bg-muted p-3 text-sm">
-                          <p>Content delivery systems, product catalogs, and user profile services</p>
+                        <div className="mt-auto">
+                          <h4 className="font-medium mb-2">Example:</h4>
+                          <div className="rounded-lg bg-muted p-3 text-sm">
+                            <p>Content delivery systems, product catalogs, and user profile services</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -555,21 +562,21 @@ export default function ComparisonPage() {
                       <h3 className="text-lg font-medium mb-4">Common Combinations</h3>
                       <div className="rounded-lg border p-4">
                         <div className="grid md:grid-cols-2 gap-6">
-                          <div>
-                            <h4 className="font-medium mb-2">Read-Through + Write-Through</h4>
+                        <div className="flex flex-col">
+                        <h4 className="font-medium mb-2">Read-Through + Write-Through</h4>
                             <p className="text-sm mb-3">
                               The most consistent combination, ensuring data is always synchronized.
                             </p>
-                            <div className="rounded-lg bg-muted p-3 text-sm">
+                            <div className="rounded-lg bg-muted p-3 text-sm mt-auto">
                               <p>
                                 <strong>Best for:</strong> Financial applications, e-commerce platforms
                               </p>
                             </div>
                           </div>
-                          <div>
+                          <div className="flex flex-col">
                             <h4 className="font-medium mb-2">Read-Through + Write-Back</h4>
                             <p className="text-sm mb-3">Balances performance and consistency for most applications.</p>
-                            <div className="rounded-lg bg-muted p-3 text-sm">
+                            <div className="rounded-lg bg-muted p-3 text-sm mt-auto">
                               <p>
                                 <strong>Best for:</strong> Social media, content management systems
                               </p>
