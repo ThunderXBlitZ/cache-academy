@@ -113,7 +113,7 @@ function CacheMechanicsDemo() {
     "read-through": {
       title: "Read-Through Cache",
       description: "When data isn't in the cache, it's automatically fetched from the database.",
-      diagram: "/cache-academy/images/cache-read-through (2).png",
+      diagram: "/cache-academy/images/cache-read-through.png",
       steps: [
         {
           title: "Initial State",

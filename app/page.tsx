@@ -51,26 +51,23 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-6 mt-8">
-                  <div className="mb-16 flex flex-col md:flex-row gap-6 items-center">
-                    <div className="md:w-1/2">
-                      <p className="text-lg mb-4">
-                        <strong>Caching</strong> is like having a small notepad where you write down information you use
-                        often, so you don't have to look it up in a big encyclopedia every time.
-                      </p>
-                      <p className="text-lg">
-                        In computing, a cache stores frequently accessed data in a faster storage layer so it can be
-                        retrieved more quickly than accessing the original source.
-                      </p>
-                    </div>
-                    <div className="md:w-1/2">
+                  <div className="mb-16 flex flex-col gap-6 items-center">
+                    <p className="text-lg mb-4">
+                      <strong>Caching</strong> is like having a small notepad where you write down information you use
+                      often, so you don't have to look it up in a big encyclopedia every time.
+                    </p>
+                    <p className="text-lg">
+                      In computing, a cache stores frequently accessed data in a faster storage layer so it can be
+                      retrieved more quickly than accessing the original source.
+                    </p>
+                    <br></br>
                       <Image
                         src="/cache-academy/images/cache-how-it-works.png"
                         alt="How Caching Works"
-                        width={500}
-                        height={300}
+                        width={720}
+                        height={360}
                         className="rounded-lg border shadow-sm"
                       />
-                    </div>
                   </div>
 
                   <hr></hr>
