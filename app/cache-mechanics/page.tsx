@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -86,11 +87,14 @@ type Step = {
 type CacheMechanic = {
   title: string;
   description: string;
+  diagram: string;
   steps: Step[];
   pros: string[];
   cons: string[];
   pseudoCode: string;
   bestFor: string;
+  width?: number;
+  height?: number;
 };
 
 type CacheMechanics = {
@@ -98,7 +102,7 @@ type CacheMechanics = {
 };
 
 function CacheMechanicsDemo() {
-  const [activeTab, setActiveTab] = useState<string>("write-through")
+  const [activeTab, setActiveTab] = useState<string>("read-through")
   const [currentStep, setCurrentStep] = useState<number>(0)
 
   // Add state to track collapsible sections
@@ -106,9 +110,94 @@ function CacheMechanicsDemo() {
   const toggleCode = () => setCodeVisible(!codeVisible)
 
   const cacheMechanics: CacheMechanics = {
+    "read-through": {
+      title: "Read-Through Cache",
+      description: "When data isn't in the cache, it's automatically fetched from the database.",
+      diagram: "/cache-academy/images/cache-read-through (2).png",
+      steps: [
+        {
+          title: "Initial State",
+          description: "The system starts with some data in the cache and all data in the database.",
+          cacheState: { key1: "value1" },
+          dbState: { key1: "value1", key2: "value2", key3: "value3" },
+          appState: "Application ready to process read operations",
+        },
+        {
+          title: "Read Request (Cache Hit)",
+          description: "Application requests key1, which is found in the cache",
+          cacheState: { key1: "value1" },
+          dbState: { key1: "value1", key2: "value2", key3: "value3" },
+          appState: "Reading key1 from cache",
+          highlight: "cache",
+        },
+        {
+          title: "Read Request (Cache Miss)",
+          description: "Application requests key2, which is not in the cache",
+          cacheState: { key1: "value1" },
+          dbState: { key1: "value1", key2: "value2", key3: "value3" },
+          appState: "Cache miss for key2, fetching from database",
+          highlight: "app",
+        },
+        {
+          title: "Database Read",
+          description: "The cache automatically fetches key2 from the database",
+          cacheState: { key1: "value1" },
+          dbState: { key1: "value1", key2: "value2", key3: "value3" },
+          appState: "Reading key2 from database",
+          highlight: "db",
+        },
+        {
+          title: "Cache Update",
+          description: "The cache is updated with the value of key2",
+          cacheState: { key1: "value1", key2: "value2" },
+          dbState: { key1: "value1", key2: "value2", key3: "value3" },
+          appState: "Updating cache with key2 value",
+          highlight: "cache",
+        },
+        {
+          title: "Read Complete",
+          description: "The read operation is complete, and the value is returned to the application",
+          cacheState: { key1: "value1", key2: "value2" },
+          dbState: { key1: "value1", key2: "value2", key3: "value3" },
+          appState: "Read operation completed successfully",
+        },
+      ],
+      pros: [
+        "Automatic cache population",
+        "Simplified application logic",
+        "Cache always has requested data after first access",
+      ],
+      cons: ["Initial read latency on cache miss", "Potential for cache pollution", "May fetch unnecessary data"],
+      pseudoCode: `// Read-Through Cache implementation
+function readData(key) {
+  // Check if data exists in cache
+  if (cache.has(key)) {
+    return cache.get(key);  // Return from cache (cache hit)
+  }
+  
+  // If not in cache, cache automatically gets from database
+  const data = database.get(key);  // Cache miss
+  
+  // Store in cache for future reads
+  cache.set(key, data);
+  
+  return data;
+}
+
+function writeData(key, value) {
+  // This depends on which write strategy you pair with read-through
+  // For example, with write-through:
+  cache.set(key, value);
+  database.set(key, value);
+  
+  return true;
+}`,
+      bestFor: "Applications that need simple caching with minimal code complexity",
+    },
     "write-through": {
       title: "Write-Through Cache",
       description: "Write data to both the cache and database at the same time.",
+      diagram: "/cache-academy/images/cache-write-through.png",
       steps: [
         {
           title: "Initial State",
@@ -172,6 +261,7 @@ function readData(key) {
     "write-back": {
       title: "Write-Back Cache",
       description: "Write data to the cache first, then update the database later.",
+      diagram: "/cache-academy/images/cache-write-back.png",
       steps: [
         {
           title: "Initial State",
@@ -264,6 +354,9 @@ function readData(key) {
     "write-around": {
       title: "Write-Around Cache",
       description: "Write data directly to the database, skipping the cache.",
+      diagram: "/cache-academy/images/cache-write-around.png",
+      width:320,
+      height:400,
       steps: [
         {
           title: "Initial State",
@@ -343,90 +436,7 @@ function readData(key) {
   return data;
 }`,
       bestFor: "Applications with data that is written once but rarely read",
-    },
-    "read-through": {
-      title: "Read-Through Cache",
-      description: "When data isn't in the cache, it's automatically fetched from the database.",
-      steps: [
-        {
-          title: "Initial State",
-          description: "The system starts with some data in the cache and all data in the database.",
-          cacheState: { key1: "value1" },
-          dbState: { key1: "value1", key2: "value2", key3: "value3" },
-          appState: "Application ready to process read operations",
-        },
-        {
-          title: "Read Request (Cache Hit)",
-          description: "Application requests key1, which is found in the cache",
-          cacheState: { key1: "value1" },
-          dbState: { key1: "value1", key2: "value2", key3: "value3" },
-          appState: "Reading key1 from cache",
-          highlight: "cache",
-        },
-        {
-          title: "Read Request (Cache Miss)",
-          description: "Application requests key2, which is not in the cache",
-          cacheState: { key1: "value1" },
-          dbState: { key1: "value1", key2: "value2", key3: "value3" },
-          appState: "Cache miss for key2, fetching from database",
-          highlight: "app",
-        },
-        {
-          title: "Database Read",
-          description: "The cache automatically fetches key2 from the database",
-          cacheState: { key1: "value1" },
-          dbState: { key1: "value1", key2: "value2", key3: "value3" },
-          appState: "Reading key2 from database",
-          highlight: "db",
-        },
-        {
-          title: "Cache Update",
-          description: "The cache is updated with the value of key2",
-          cacheState: { key1: "value1", key2: "value2" },
-          dbState: { key1: "value1", key2: "value2", key3: "value3" },
-          appState: "Updating cache with key2 value",
-          highlight: "cache",
-        },
-        {
-          title: "Read Complete",
-          description: "The read operation is complete, and the value is returned to the application",
-          cacheState: { key1: "value1", key2: "value2" },
-          dbState: { key1: "value1", key2: "value2", key3: "value3" },
-          appState: "Read operation completed successfully",
-        },
-      ],
-      pros: [
-        "Automatic cache population",
-        "Simplified application logic",
-        "Cache always has requested data after first access",
-      ],
-      cons: ["Initial read latency on cache miss", "Potential for cache pollution", "May fetch unnecessary data"],
-      pseudoCode: `// Read-Through Cache implementation
-function readData(key) {
-  // Check if data exists in cache
-  if (cache.has(key)) {
-    return cache.get(key);  // Return from cache (cache hit)
-  }
-  
-  // If not in cache, cache automatically gets from database
-  const data = database.get(key);  // Cache miss
-  
-  // Store in cache for future reads
-  cache.set(key, data);
-  
-  return data;
-}
-
-function writeData(key, value) {
-  // This depends on which write strategy you pair with read-through
-  // For example, with write-through:
-  cache.set(key, value);
-  database.set(key, value);
-  
-  return true;
-}`,
-      bestFor: "Applications that need simple caching with minimal code complexity",
-    },
+    }
   }
   
   const currentMechanic = cacheMechanics[activeTab]
@@ -453,10 +463,10 @@ function writeData(key, value) {
     <div className="mx-auto max-w-5xl">
       <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
         <TabsList className="grid w-full grid-cols-4">
+          <TabsTrigger value="read-through">Read-Through</TabsTrigger>
           <TabsTrigger value="write-through">Write-Through</TabsTrigger>
           <TabsTrigger value="write-back">Write-Back</TabsTrigger>
           <TabsTrigger value="write-around">Write-Around</TabsTrigger>
-          <TabsTrigger value="read-through">Read-Through</TabsTrigger>
         </TabsList>
 
         <TabsContent value={activeTab} className="mt-6">
@@ -466,8 +476,17 @@ function writeData(key, value) {
               <CardDescription>{currentMechanic.description}</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="mb-6">
-                <div className="mb-4 flex items-center justify-between">
+              <div className="flex flex-col mb-6">
+                     <Image
+                        src={currentMechanic.diagram}
+                        alt={currentMechanic.title}
+                        width={currentMechanic.width || 500}
+                        height={currentMechanic.height || 500}
+                        className="rounded-lg border shadow-sm self-center"
+                      />
+                      <br></br>
+                <hr></hr>
+                <div className="mt-16 mb-4 flex items-center justify-between">
                   <h3 className="text-lg font-medium">{currentStepData.title}</h3>
                   <div className="text-sm text-muted-foreground">
                     Step {currentStep + 1} of {currentMechanic.steps.length}
@@ -558,6 +577,7 @@ function writeData(key, value) {
               </Button>
             </CardFooter>
           </Card>
+          
 
           <div className="mt-16">
             <Card>

@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.3">
+  <diagram name="Page-1" id="HsIWlA9ryuRvEllhMJ8e">
+    <mxGraphModel dx="881" dy="564" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="x8EXjXUA_OM579pIJwaL-47" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="87.5" y="20.5" width="765" height="315" as="geometry" />
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-20" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.user;" vertex="1" parent="1">
+          <mxGeometry x="140" y="210" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-21" value="User" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#0B549D;" vertex="1" parent="1">
+          <mxGeometry x="125" y="240" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-22" value="&lt;b&gt;Application&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#0066CC;" vertex="1" parent="1">
+          <mxGeometry x="280" y="195" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-23" value="&lt;b&gt;&lt;font color=&quot;#3399ff&quot;&gt;Cache&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEAFF;strokeColor=#6c8ebf;fontColor=#A9C4EB;" vertex="1" parent="1">
+          <mxGeometry x="480" y="195" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-24" value="&lt;b&gt;Database&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#7241A3;" vertex="1" parent="1">
+          <mxGeometry x="680" y="195" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-25" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="210" as="sourcePoint" />
+            <mxPoint x="270" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-26" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.848;entryY=-0.129;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="264.12" y="236" as="sourcePoint" />
+            <mxPoint x="180.0000000000001" y="236.13" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-27" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="413.5" y="210" as="sourcePoint" />
+            <mxPoint x="459.5" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-29" value="1. User requests for data" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="170" y="165" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-30" value="2. Fetches from cache" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="390" y="150" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-32" value="Returns data. END" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="170" y="270" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-38" value="&lt;b&gt;Cache Read Through&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="346.67" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-39" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.848;entryY=-0.129;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="240" as="sourcePoint" />
+            <mxPoint x="414.0000000000001" y="239.42" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-40" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="209.87" as="sourcePoint" />
+            <mxPoint x="666" y="209.87" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-41" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.848;entryY=-0.129;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="666.5" y="239.87" as="sourcePoint" />
+            <mxPoint x="620.5000000000001" y="239.29" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-44" value="3. If not found, cache fetches data from DB" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="590" y="150" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-45" value="Cache updates and returns data" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="600" y="270" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x8EXjXUA_OM579pIJwaL-46" value="Returns data" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="390" y="270" width="105" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

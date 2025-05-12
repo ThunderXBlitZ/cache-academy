@@ -64,7 +64,7 @@ export default function HomePage() {
                     </div>
                     <div className="md:w-1/2">
                       <Image
-                        src="/cache-academy/images/caching-simplified.svg"
+                        src="/cache-academy/images/cache-how-it-works.png"
                         alt="How Caching Works"
                         width={500}
                         height={300}

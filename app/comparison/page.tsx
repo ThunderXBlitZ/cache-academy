@@ -64,15 +64,34 @@ export default function ComparisonPage() {
                           <tr>
                             <th className="py-4 px-4 text-left font-medium bg-primary/10 text-primary">Strategy</th>
                             <th className="py-4 px-4 text-left font-medium bg-primary/10 text-primary">Description</th>
-                            <th className="py-4 px-4 text-left font-medium bg-primary/10 text-primary">
-                              Data Consistency
-                            </th>
+                            <th className="py-4 px-4 text-left font-medium bg-primary/10 text-primary">Consistency</th>
                             <th className="py-4 px-4 text-left font-medium bg-primary/10 text-primary">Write Speed</th>
                             <th className="py-4 px-4 text-left font-medium bg-primary/10 text-primary">Read Speed</th>
                             <th className="py-4 px-4 text-left font-medium bg-primary/10 text-primary">Complexity</th>
                           </tr>
                         </thead>
                         <tbody>
+                        <tr>
+                            <td className="py-4 px-4 font-medium">Read-Through</td>
+                            <td className="py-4 px-4">Cache automatically fetches from database on miss</td>
+                            <td className="py-4 px-4">
+                              <div className="flex items-center">
+                                <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                                <span>High</span>
+                              </div>
+                            </td>
+                            <td className="py-4 px-4">
+                              <div className="flex items-center">
+                                <span>Depends on write strategy</span>
+                              </div>
+                            </td>
+                            <td className="py-4 px-4">
+                              <div className="flex items-center">
+                                <span>Fast after first access</span>
+                              </div>
+                            </td>
+                            <td className="py-4 px-4">Low</td>
+                          </tr>
                           <tr className="border-b">
                             <td className="py-4 px-4 font-medium">Write-Through</td>
                             <td className="py-4 px-4">Write to both cache and database simultaneously</td>
@@ -136,31 +155,10 @@ export default function ComparisonPage() {
                             </td>
                             <td className="py-4 px-4">
                               <div className="flex items-center">
-                                <span>Slow after writes</span>
+                                <span className="text-red-600">Slow after writes</span>
                               </div>
                             </td>
                             <td className="py-4 px-4">Medium</td>
-                          </tr>
-                          <tr>
-                            <td className="py-4 px-4 font-medium">Read-Through</td>
-                            <td className="py-4 px-4">Cache automatically fetches from database on miss</td>
-                            <td className="py-4 px-4">
-                              <div className="flex items-center">
-                                <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                                <span>High</span>
-                              </div>
-                            </td>
-                            <td className="py-4 px-4">
-                              <div className="flex items-center">
-                                <span>Depends on write strategy</span>
-                              </div>
-                            </td>
-                            <td className="py-4 px-4">
-                              <div className="flex items-center">
-                                <span>Fast after first access</span>
-                              </div>
-                            </td>
-                            <td className="py-4 px-4">Low</td>
                           </tr>
                         </tbody>
                       </table>
