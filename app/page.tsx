@@ -156,6 +156,36 @@ export default function HomePage() {
                     </div>
                   </div>
 
+                  <div className="rounded-lg border-2 border-primary/20 bg-primary/1 mt-12 p-6">
+                    <h3 className="text-xl font-medium mb-4">Example of Caching Systems</h3>
+                      <div className="flex flex-col md:flex-row gap-4">
+                        <div className="flex-1">
+                          <ul className="space-y-2">
+                            <li className="flex items-start gap-2">
+                              <span className="text-primary mt-1">•</span>
+                              <a href="https://redis.io/lp/get-started2/" target="_new">Redis</a>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="text-primary mt-1">•</span>
+                              <a href="https://memcached.org/" target="_new">Memcached</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="flex-1">
+                          <ul>
+                            <li className="flex items-start gap-2">
+                              <span className="text-primary mt-1">•</span>
+                              <a href="https://hazelcast.com/use-cases/caching/" target="_new">Hazelcast</a>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="text-primary mt-1">•</span>
+                              <a href="https://aws.amazon.com/elasticache" target="_new">Amazon ElastiCache</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                  </div>
+
                   <div className="rounded-lg border-2 border-primary/20 bg-primary/5 mt-12 p-6">
                     <h3 className="text-xl font-medium mb-4">The Caching Challenge</h3>
                     <p className="mb-4">
