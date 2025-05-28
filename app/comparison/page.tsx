@@ -19,6 +19,9 @@ export default function ComparisonPage() {
             <Link href="/" className="font-medium text-muted-foreground hover:text-primary">
               Home
             </Link>
+            <Link href="/access-speeds" className="font-medium text-muted-foreground hover:text-primary">
+              Access Speeds
+            </Link>
             <Link href="/cache-mechanics" className="font-medium text-muted-foreground hover:text-primary">
               Cache Mechanics
             </Link>
@@ -32,7 +35,7 @@ export default function ComparisonPage() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="py-8 md:py-12">
+        <section className="pt-10 md:pt-14 pb-4 md:pb-4">
           <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4">
             <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl">
               Comparing Caching Strategies
@@ -611,6 +614,9 @@ export default function ComparisonPage() {
           <div className="flex items-center gap-4">
             <Link href="/" className="text-sm text-muted-foreground hover:text-primary">
               Home
+            </Link>
+            <Link href="/access-speeds" className="text-sm text-muted-foreground hover:text-primary">
+              Access Speeds
             </Link>
             <Link href="/cache-mechanics" className="text-sm text-muted-foreground hover:text-primary">
               Cache Mechanics

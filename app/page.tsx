@@ -24,6 +24,9 @@ export default function HomePage() {
             <Link href="/" className="font-medium text-primary">
               Home
             </Link>
+            <Link href="/access-speeds" className="font-medium text-muted-foreground hover:text-primary">
+              Access Speeds
+            </Link>
             <Link href="/cache-mechanics" className="font-medium text-muted-foreground hover:text-primary">
               Cache Mechanics
             </Link>
@@ -265,9 +268,9 @@ function getData(key) {
                 </div>
               </CardContent>
               <CardFooter className="mt-4 flex justify-end">
-                <Link href="/cache-mechanics">
+                <Link href="/access-speeds">
                   <Button className="gap-2">
-                    Explore Caching Mechanisms <ArrowRight className="h-4 w-4" />
+                    Explore Access Speeds <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
               </CardFooter>
@@ -283,6 +286,9 @@ function getData(key) {
           <div className="flex items-center gap-4">
             <Link href="/" className="text-sm text-muted-foreground hover:text-primary">
               Home
+            </Link>
+            <Link href="/access-speeds" className="text-sm text-muted-foreground hover:text-primary">
+              Access Speeds
             </Link>
             <Link href="/cache-mechanics" className="text-sm text-muted-foreground hover:text-primary">
               Cache Mechanics

@@ -21,6 +21,9 @@ export default function CacheMechanicsPage() {
             <Link href="/" className="font-medium text-muted-foreground hover:text-primary">
               Home
             </Link>
+            <Link href="/access-speeds" className="font-medium text-muted-foreground hover:text-primary">
+              Access Speeds
+            </Link>
             <Link href="/cache-mechanics" className="font-medium text-primary">
               Cache Mechanics
             </Link>
@@ -34,14 +37,12 @@ export default function CacheMechanicsPage() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="py-16">
-          <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4">
-            <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:text-5xl">
-              Four Ways to Manage Your Cache
-            </h1>
-            <p className="text-lg text-muted-foreground md:text-xl">
-              Explore the four main strategies for moving data between your cache and database
-            </p>
+        <section className="pt-12 md:pt-16">
+          <div className="mx-auto max-w-[980px]">
+            <div className="text-center mb-4">
+              <h1 className="text-4xl font-bold tracking-tight md:text-5xl mb-4">Four Ways to Manage Your Cache</h1>
+              <p className="text-xl text-muted-foreground">Explore the four main strategies for moving data between your cache and database</p>
+            </div>
           </div>
         </section>
         <section className="py-8">
@@ -56,6 +57,9 @@ export default function CacheMechanicsPage() {
           <div className="flex items-center gap-4">
             <Link href="/" className="text-sm text-muted-foreground hover:text-primary">
               Home
+            </Link>
+            <Link href="/access-speeds" className="text-sm text-muted-foreground hover:text-primary">
+              Access Speeds
             </Link>
             <Link href="/cache-mechanics" className="text-sm text-muted-foreground hover:text-primary">
               Cache Mechanics
@@ -635,9 +639,9 @@ function readData(key) {
       </Tabs>
 
       <div className="mt-16 flex justify-between">
-        <Link href="/">
+        <Link href="/access-speeds">
           <Button variant="outline" className="gap-2">
-            <ArrowLeft className="h-4 w-4" /> Back to Home
+            <ArrowLeft className="h-4 w-4" /> Back to Access Speeds
           </Button>
         </Link>
         <Link href="/comparison">
