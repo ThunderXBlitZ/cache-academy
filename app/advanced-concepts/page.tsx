@@ -207,7 +207,7 @@ function AdvancedCachingConcepts() {
                     variant="ghost"
                     size="sm"
                     onClick={() => setPessimisticCodeVisible(!pessimisticCodeVisible)}
-                    className="flex items-center gap-1 mb-2"
+                    className={"flex items-center gap-1 mb-2 " + (pessimisticCodeVisible? "" : "text-blue-500")}
                   >
                     {pessimisticCodeVisible ? "Hide Code" : "Show Code Example"}
                     <ChevronDown
@@ -287,7 +287,7 @@ function updateData(key, updateFn) {
                     variant="ghost"
                     size="sm"
                     onClick={() => setOptimisticCodeVisible(!optimisticCodeVisible)}
-                    className="flex items-center gap-1 mb-2"
+                    className={"flex items-center gap-1 mb-2 " + (optimisticCodeVisible? "" : "text-blue-500")}
                   >
                     {optimisticCodeVisible ? "Hide Code" : "Show Code Example"}
                     <ChevronDown
@@ -418,7 +418,7 @@ function updateData(key, updateFn) {
                     variant="ghost"
                     size="sm"
                     onClick={() => setCacheLockCodeVisible(!cacheLockCodeVisible)}
-                    className="flex items-center gap-1 mb-2"
+                    className={"flex items-center gap-1 mb-2 " + (cacheLockCodeVisible? "" : "text-blue-500")}
                   >
                     {cacheLockCodeVisible ? "Hide Code" : "Show Code Example"}
                     <ChevronDown
@@ -502,7 +502,7 @@ function getData(key) {
                     variant="ghost"
                     size="sm"
                     onClick={() => setStaleCacheCodeVisible(!staleCacheCodeVisible)}
-                    className="flex items-center gap-1 mb-2"
+                    className={"flex items-center gap-1 mb-2 " + (staleCacheCodeVisible? "" : "text-blue-500")}
                   >
                     {staleCacheCodeVisible ? "Hide Code" : "Show Code Example"}
                     <ChevronDown
@@ -618,7 +618,7 @@ function getData(key) {
                     variant="ghost"
                     size="sm"
                     onClick={() => setLruCodeVisible(!lruCodeVisible)}
-                    className="flex items-center gap-1 mb-2"
+                    className={"flex items-center gap-1 mb-2 " + (lruCodeVisible? "" : "text-blue-500")}
                   >
                     {lruCodeVisible ? "Hide Code" : "Show Code Example"}
                     <ChevronDown className={`h-4 w-4 transition-transform ${lruCodeVisible ? "rotate-180" : ""}`} />
@@ -695,7 +695,7 @@ class LRUCache {
                     variant="ghost"
                     size="sm"
                     onClick={() => setLfuCodeVisible(!lfuCodeVisible)}
-                    className="flex items-center gap-1 mb-2"
+                    className={"flex items-center gap-1 mb-2 " + (lfuCodeVisible? "" : "text-blue-500")}
                   >
                     {lfuCodeVisible ? "Hide Code" : "Show Code Example"}
                     <ChevronDown className={`h-4 w-4 transition-transform ${lfuCodeVisible ? "rotate-180" : ""}`} />
@@ -804,7 +804,7 @@ class LFUCache {
                     variant="ghost"
                     size="sm"
                     onClick={() => setFifoCodeVisible(!fifoCodeVisible)}
-                    className="flex items-center gap-1 mb-2"
+                    className={"flex items-center gap-1 mb-2 " + (fifoCodeVisible? "" : "text-blue-500")}
                   >
                     {fifoCodeVisible ? "Hide Code" : "Show Code Example"}
                     <ChevronDown className={`h-4 w-4 transition-transform ${fifoCodeVisible ? "rotate-180" : ""}`} />
@@ -876,7 +876,7 @@ class FIFOCache {
                     variant="ghost"
                     size="sm"
                     onClick={() => setRandomCodeVisible(!randomCodeVisible)}
-                    className="flex items-center gap-1 mb-2"
+                    className={"flex items-center gap-1 mb-2 " + (randomCodeVisible? "" : "text-blue-500")}
                   >
                     {randomCodeVisible ? "Hide Code" : "Show Code Example"}
                     <ChevronDown className={`h-4 w-4 transition-transform ${randomCodeVisible ? "rotate-180" : ""}`} />

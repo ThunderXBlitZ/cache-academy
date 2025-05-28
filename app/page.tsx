@@ -207,7 +207,7 @@ export default function HomePage() {
                   <div className="mt-12">
                     <div className="flex items-center justify-between">
                       <h3 className="text-xl font-medium mb-4">Simple Caching Example</h3>
-                      <Button variant="ghost" size="sm" onClick={toggleCode} className="flex items-center gap-1">
+                      <Button variant="ghost" size="sm" onClick={toggleCode} className={"flex items-center gap-1 " + (codeVisible ? "" : "text-blue-500")}>
                         {codeVisible ? "Hide Code" : "Show Code"}
                         <ChevronDown className={`h-4 w-4 transition-transform ${codeVisible ? "rotate-180" : ""}`} />
                       </Button>
