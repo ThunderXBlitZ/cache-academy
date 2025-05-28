@@ -677,7 +677,7 @@ class LRUCache {
                   <BarChart className="h-12 w-12 text-primary" />
                 </div>
                 <p className="text-sm mb-4 text-center">
-                  Like keeping kitchen tools you use daily and removing rarely used ones
+                  Like removing rarely used clothes
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="rounded bg-green-50 p-2 text-xs text-green-700">
