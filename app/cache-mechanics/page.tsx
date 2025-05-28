@@ -82,6 +82,9 @@ type Step = {
   dbState: CacheState;
   appState: string;
   highlight?: "app" | "cache" | "db" | "both";
+  highlightCacheStateText?: string
+  highlightDbStateText?: string
+  strikeThroughCacheStateText?: string
 };
 
 type CacheMechanic = {
@@ -153,13 +156,14 @@ function CacheMechanicsDemo() {
           dbState: { key1: "value1", key2: "value2", key3: "value3" },
           appState: "Updating cache with key2 value",
           highlight: "cache",
+          highlightCacheStateText: "key2"
         },
         {
           title: "Read Complete",
           description: "The read operation is complete, and the value is returned to the application",
           cacheState: { key1: "value1", key2: "value2" },
           dbState: { key1: "value1", key2: "value2", key3: "value3" },
-          appState: "Read operation completed successfully",
+          appState: "Read operation completed successfully"
         },
       ],
       pros: [
@@ -219,6 +223,8 @@ function writeData(key, value) {
           description: "The cache and database are updated simultaneously",
           cacheState: { key1: "new-value1", key2: "value2" },
           dbState: { key1: "new-value1", key2: "value2" },
+          highlightCacheStateText: "key1",
+          highlightDbStateText: "key1",
           appState: "Writing to cache and database",
           highlight: "both",
         },
@@ -227,7 +233,7 @@ function writeData(key, value) {
           description: "The write operation is complete, and both systems are in sync",
           cacheState: { key1: "new-value1", key2: "value2" },
           dbState: { key1: "new-value1", key2: "value2" },
-          appState: "Write operation completed successfully",
+          appState: "Write operation completed successfully"
         },
       ],
       pros: ["Data consistency between cache and database", "Simple to implement", "No stale data"],
@@ -283,6 +289,7 @@ function readData(key) {
           description: "The cache is updated immediately",
           cacheState: { key1: "new-value1", key2: "value2" },
           dbState: { key1: "value1", key2: "value2" },
+          highlightCacheStateText: "key1",
           appState: "Writing to cache only",
           highlight: "cache",
         },
@@ -291,6 +298,7 @@ function readData(key) {
           description: "The database is updated asynchronously after some time",
           cacheState: { key1: "new-value1", key2: "value2" },
           dbState: { key1: "new-value1", key2: "value2" },
+          highlightDbStateText: "key1",
           appState: "Asynchronously writing to database",
           highlight: "db",
         },
@@ -378,13 +386,15 @@ function readData(key) {
           description: "The database is updated directly, bypassing the cache",
           cacheState: { key1: "value1", key2: "value2" },
           dbState: { key1: "new-value1", key2: "value2" },
+          highlightDbStateText: "key1",
           appState: "Writing directly to database",
           highlight: "db",
         },
         {
           title: "Cache Invalidation",
           description: "The cache entry for key1 is invalidated (optional step)",
-          cacheState: { key2: "value2" },
+          cacheState: { key1: "value1", key2: "value2" },
+          strikeThroughCacheStateText: "key1",
           dbState: { key1: "new-value1", key2: "value2" },
           appState: "Invalidating cache entry for key1",
           highlight: "cache",
@@ -394,6 +404,7 @@ function readData(key) {
           description: "On the next read, the updated value is fetched from the database",
           cacheState: { key1: "new-value1", key2: "value2" },
           dbState: { key1: "new-value1", key2: "value2" },
+          highlightCacheStateText: "key1",
           appState: "Reading key1 from database and updating cache",
           highlight: "both",
         },
@@ -504,7 +515,9 @@ function readData(key) {
                         <Code className="h-5 w-5 text-muted-foreground" />
                         <h4 className="font-medium">Application</h4>
                       </div>
-                      <p className="text-sm text-muted-foreground">{currentStepData.appState}</p>
+                      <p className={`text-sm ${currentStep === currentMechanic.steps.length - 1 ? "text-green-700": "text-muted-foreground"}`}>
+                        {currentStepData.appState}
+                      </p>
                     </div>
 
                     <div
@@ -517,7 +530,7 @@ function readData(key) {
                       <div className="space-y-1">
                         {Object.entries(currentStepData.cacheState).map(([key, value]) => (
                           <div key={key} className="rounded bg-muted px-2 py-1 text-xs">
-                            <span className="font-mono">
+                            <span className={`font-mono ${currentStepData.highlightCacheStateText === key? "text-green-700" : ""} ${currentStepData.strikeThroughCacheStateText === key? "line-through" : ""}`}>
                               {key}: "{value}"
                             </span>
                           </div>
@@ -540,7 +553,7 @@ function readData(key) {
                       <div className="space-y-1">
                         {Object.entries(currentStepData.dbState).map(([key, value]) => (
                           <div key={key} className="rounded bg-muted px-2 py-1 text-xs">
-                            <span className="font-mono">
+                            <span className={`font-mono ${currentStepData.highlightDbStateText === key? "text-green-700" : ""}`}>
                               {key}: "{value}"
                             </span>
                           </div>
