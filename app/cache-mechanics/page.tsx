@@ -355,8 +355,8 @@ function readData(key) {
       title: "Write-Around Cache",
       description: "Write data directly to the database, skipping the cache.",
       diagram: "/cache-academy/images/cache-write-around.png",
-      width:320,
-      height:400,
+      width:480,
+      height:640,
       steps: [
         {
           title: "Initial State",
@@ -480,8 +480,8 @@ function readData(key) {
                      <Image
                         src={currentMechanic.diagram}
                         alt={currentMechanic.title}
-                        width={currentMechanic.width || 500}
-                        height={currentMechanic.height || 500}
+                        width={currentMechanic.width || 720}
+                        height={currentMechanic.height || 720}
                         className="rounded-lg border shadow-sm self-center"
                       />
                       <br></br>
@@ -549,8 +549,19 @@ function readData(key) {
                     </div>
                   </div>
                 </div>
-              </div>
 
+                <div className="flex items-center justify-between">
+                  <Button variant="outline" onClick={handlePrevStep} disabled={currentStep === 0}>
+                    Previous Step
+                  </Button>
+                  <Button onClick={handleNextStep} disabled={currentStep === currentMechanic.steps.length - 1}>
+                    Next Step
+                  </Button>
+                </div>
+              </div>
+              
+              <br></br>
+              
               <div className="mt-6">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-medium">Implementation</h3>
@@ -568,14 +579,6 @@ function readData(key) {
                 )}
               </div>
             </CardContent>
-            <CardFooter className="flex justify-between">
-              <Button variant="outline" onClick={handlePrevStep} disabled={currentStep === 0}>
-                Previous Step
-              </Button>
-              <Button onClick={handleNextStep} disabled={currentStep === currentMechanic.steps.length - 1}>
-                Next Step
-              </Button>
-            </CardFooter>
           </Card>
           
 

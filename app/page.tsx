@@ -60,7 +60,6 @@ export default function HomePage() {
                       In computing, a cache stores frequently accessed data in a faster storage layer so it can be
                       retrieved more quickly than accessing the original source.
                     </p>
-                    <br></br>
                       <Image
                         src="/cache-academy/images/cache-how-it-works.png"
                         alt="How Caching Works"
