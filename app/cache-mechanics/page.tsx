@@ -120,7 +120,7 @@ function CacheMechanicsDemo() {
     "read-through": {
       title: "Read-Through Cache",
       description: "When data isn't in the cache, it's automatically fetched from the database.",
-      diagram: "/cache-academy/images/cache-read-through.png",
+      diagram: "/cache-academy/images/cache-read-through.svg",
       steps: [
         {
           title: "Initial State",
@@ -205,7 +205,7 @@ function writeData(key, value) {
     "write-through": {
       title: "Write-Through Cache",
       description: "Write data to both the cache and database at the same time.",
-      diagram: "/cache-academy/images/cache-write-through.png",
+      diagram: "/cache-academy/images/cache-write-through.svg",
       steps: [
         {
           title: "Initial State",
@@ -271,7 +271,7 @@ function readData(key) {
     "write-back": {
       title: "Write-Back Cache",
       description: "Write data to the cache first, then update the database later.",
-      diagram: "/cache-academy/images/cache-write-back.png",
+      diagram: "/cache-academy/images/cache-write-back.svg",
       steps: [
         {
           title: "Initial State",
@@ -366,7 +366,7 @@ function readData(key) {
     "write-around": {
       title: "Write-Around Cache",
       description: "Write data directly to the database, skipping the cache.",
-      diagram: "/cache-academy/images/cache-write-around.png",
+      diagram: "/cache-academy/images/cache-write-around.svg",
       width:480,
       height:640,
       steps: [

@@ -63,13 +63,13 @@ export default function HomePage() {
                       to achieve high speeds while controlling costs.
                     </p>
                       <Image
-                        src="/cache-academy/images/access-speeds.png"
+                        src="/cache-academy/images/access-speeds.svg"
                         alt="Access speeds"
                         width={720}
                         height={360}
                         className="rounded-lg border shadow-sm"
                       />
-                      <p> Source: <a href="https://cs.brown.edu/courses/csci1310/2020/assign/labs/lab4.html">https://cs.brown.edu/courses/csci1310/2020/assign/labs/lab4.html</a> </p>
+                      <p><i>Source:</i><a href="https://cs.brown.edu/courses/csci1310/2020/assign/labs/lab4.html"><i>https://cs.brown.edu/courses/csci1310/2020/assign/labs/lab4.html</i></a> </p>
                   </div>
                 </div>
               </CardContent>

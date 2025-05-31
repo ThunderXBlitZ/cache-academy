@@ -64,7 +64,7 @@ export default function HomePage() {
                       retrieved more quickly than accessing the original source.
                     </p>
                       <Image
-                        src="/cache-academy/images/cache-how-it-works.png"
+                        src="/cache-academy/images/cache-how-it-works.svg"
                         alt="How Caching Works"
                         width={720}
                         height={360}
