@@ -70,6 +70,14 @@ export default function CacheMechanicsPage() {
             <Link href="/advanced-concepts" className="text-sm text-muted-foreground hover:text-primary">
               Advanced Concepts
             </Link>
+            <a href="https://ko-fi.com/B0B014O6OC" target="_blank" rel="noopener noreferrer">
+              <img
+                height="36"
+                style={{ border: '0px', height: '36px' }}
+                src="https://storage.ko-fi.com/cdn/kofi5.png?v=3"
+                alt="Buy Me a Coffee at ko-fi.com"
+              />
+            </a>
           </div>
         </div>
       </footer>
