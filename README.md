@@ -1,4 +1,5 @@
 # Project Name
+Cache Academy 101
 
 # Description
 A simple site to teach developers all about caching, compare various caching strategies and advanced problems in caching.
